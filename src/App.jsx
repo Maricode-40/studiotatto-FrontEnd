@@ -11,4 +11,4 @@ function App() {
 
 export default App;
 
-// ESTE body se encarga de renderizar cosas
+// THIS body is in charge of rendering things
