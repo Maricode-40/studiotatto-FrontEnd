@@ -1,0 +1,8 @@
+img {
+  width: 95%;
+}
+
+.loginElementsDesign {
+  display: flex;
+  flex-direction: column;
+}

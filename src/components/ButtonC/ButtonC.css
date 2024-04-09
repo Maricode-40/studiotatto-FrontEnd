@@ -1,0 +1,21 @@
+.regularButtonClass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+  width: 20em;
+
+  background-color: blueviolet;
+  color: white;
+
+  border-radius: 1em;
+
+  transition: 0.3s;
+  margin: 1em;
+}
+
+.regularButtonClass:hover {
+  cursor: pointer;
+  background-color: darkslateblue;
+  transition: 0.3s;
+}

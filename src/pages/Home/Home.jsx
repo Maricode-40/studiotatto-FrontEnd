@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { CustomInput } from "../../components/CustomInput/CustomInput";
 
 export const Home = () => {
   const [count, setCount] = useState(0);
@@ -18,6 +19,7 @@ export const Home = () => {
     <>
       <h1>SOY HOME</h1>
       <h2>Hola subtitulos </h2>
+
       <div className="card">
         <button onClick={addCountButtonHandler}>count is {count}</button>
         <input
@@ -25,6 +27,12 @@ export const Home = () => {
           name="inputDeTest" // en un futuro se puede cambiar a username
           onChange={(e) => inputHandler(e)}
         ></input>
+        <CustomInput
+          typeProp="email"
+          nameProp="password"
+          placeholderProp="Go to your Login or Register first "
+          handlerProp={inputHandler}
+        />
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
