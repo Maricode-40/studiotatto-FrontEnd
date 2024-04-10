@@ -9,7 +9,7 @@ export const Register = () => {
   const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
-    name: "",
+    firstName: "",
     email: "",
     password: "",
   });
@@ -25,9 +25,10 @@ export const Register = () => {
   };
 
   const registerMe = async () => {
+    console.log(credentials);
     const answer = await registerNewUserCall(credentials);
     setMsg(answer.data.message);
-    //console.log(answer);
+    console.log(answer);
     if (answer.data.message) {
       setTimeout(() => {
         navigate("/login");
@@ -41,7 +42,7 @@ export const Register = () => {
         <>
           <CustomInput
             typeProp={"text"}
-            nameProp={"name"}
+            nameProp={"firstName"}
             handlerProp={(e) => inputHandler(e)}
             placeholderProp={"enter your first Name"}
           />
@@ -68,7 +69,7 @@ export const Register = () => {
       ) : (
         <div>{msg}</div>
       )}
-      {/* <pre>{JSON.stringify(credentials, null, 2)}</pre> */}
+      <pre>{JSON.stringify(credentials, null, 2)}</pre>
     </div>
   );
 };

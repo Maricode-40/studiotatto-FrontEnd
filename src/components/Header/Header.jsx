@@ -28,9 +28,7 @@ function Header() {
               >
                 Login
               </NavDropdown.Item>
-              <NavDropdown.Item href="/profile">
-                Logout
-              </NavDropdown.Item>
+              <NavDropdown.Item href="/profile">Logout</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item
                 href="/register"

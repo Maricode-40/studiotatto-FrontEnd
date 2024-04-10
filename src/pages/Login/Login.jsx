@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { CustomInput } from "../../components/CustomInput/CustomInput";
 import { ButtonC } from "../../components/ButtonC/ButtonC";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { loginCall } from "../../services/apiCalls";
 import { decodeToken } from "react-jwt";
 
@@ -39,10 +39,12 @@ export const Login = () => {
       };
       console.log(passport);
 
+      /////// missing to create Redux storage for passport
+
       setMsg(`${uDecodificado.name}, bienvenido de nuevo.`);
 
       setTimeout(() => {
-        navigate("/");
+        navigate("/login", passport);
       }, 3000);
     }
   };
