@@ -8,8 +8,8 @@ import "./Header.css";
 
 function Header() {
   const location = useLocation();
-  //console.log(location)
-  console.log(location.pathname, "here you are!");
+
+  //console.log(location.pathname, "here you are!");
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -29,7 +29,7 @@ function Header() {
                 Login
               </NavDropdown.Item>
               <NavDropdown.Item href="/profile">
-                Profile or User
+                Logout
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item
