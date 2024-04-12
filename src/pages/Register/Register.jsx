@@ -4,6 +4,7 @@ import { CustomInput } from "../../components/CustomInput/CustomInput";
 import { ButtonC } from "../../components/ButtonC/ButtonC";
 import { useState } from "react";
 import { registerNewUserCall } from "../../services/apiCalls";
+import { inputValidator } from "../../utils/validators";
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -25,14 +26,23 @@ export const Register = () => {
   };
 
   const registerMe = async () => {
-    console.log(credentials);
-    const answer = await registerNewUserCall(credentials);
-    setMsg(answer.data.message);
-    console.log(answer);
-    if (answer.data.message) {
-      setTimeout(() => {
-        navigate("/login");
-      }, 2000);
+    //console.log(credentials);
+
+    if (
+      inputValidator(credentials.firstName, "firstName") &&
+      inputValidator(credentials.password, "password")
+    ) {
+      const answer = await registerNewUserCall(credentials);
+      //console.log(answer);
+      setMsg(answer.data.message);
+
+      if (answer.data.message) {
+        setTimeout(() => {
+          navigate("/login");
+        }, 2000);
+      }
+    } else {
+      console.log("try again bad credentials");
     }
   };
 
@@ -69,7 +79,7 @@ export const Register = () => {
       ) : (
         <div>{msg}</div>
       )}
-      <pre>{JSON.stringify(credentials, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(credentials, null, 2)}</pre> */}
     </div>
   );
 };

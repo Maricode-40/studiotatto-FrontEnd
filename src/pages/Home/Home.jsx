@@ -3,43 +3,42 @@ import { CustomInput } from "../../components/CustomInput/CustomInput";
 
 export const Home = () => {
   const [count, setCount] = useState(0);
-  const [inputData, setInputData] = useState("");
+  const [credentials, setCredentials] = useState({
+    email: "",
+    password: "",
+  });
 
-  const addCountButtonHandler = () => {
-    setCount(count + 1);
+  const inputHandler = (event) => {
+    setCredentials((prevState) => ({
+      ...prevState,
+      [event.target.name]: event.target.value,
+    }));
   };
-
-  const inputHandler = (e) => {
-    setInputData(e.target.value);
-    console.log(e);
-  };
-
   useEffect(() => {}, [count]);
+
+  useEffect(() => {
+    console.log(credentials);
+  }, [credentials]);
   return (
     <>
       <h1>SOY HOME</h1>
-      <h2>Hola subtitulos </h2>
-
+      <h2>Este es el subtítulo</h2>
       <div className="card">
-        <button onClick={addCountButtonHandler}>count is {count}</button>
-        <input
-          type="text"
-          name="inputDeTest" // en un futuro se puede cambiar a username
-          onChange={(e) => inputHandler(e)}
-        ></input>
+        <button>Bring My Profile</button>
+        <h3>homeee</h3>
         <CustomInput
           typeProp="email"
-          nameProp="password"
-          placeholderProp="Go to your Login or Register first "
+          nameProp="email"
+          placeholderProp="introduce tu email"
           handlerProp={inputHandler}
         />
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <CustomInput
+          typeProp="password"
+          nameProp="password"
+          placeholderProp=""
+          handlerProp={inputHandler}
+        />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 };

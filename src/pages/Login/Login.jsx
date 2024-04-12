@@ -7,6 +7,8 @@ import { ButtonC } from "../../components/ButtonC/ButtonC";
 import { useState } from "react";
 import { loginCall } from "../../services/apiCalls";
 import { decodeToken } from "react-jwt";
+import { useDispatch } from "react-redux";
+import { login } from "../userSlice";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -17,6 +19,8 @@ export const Login = () => {
   });
 
   const [msg, setMsg] = useState("");
+
+  const dispatch = useDispatch();
 
   const inputHandler = (e) => {
     //this function is going to bind the state hook that is credentials
@@ -37,14 +41,17 @@ export const Login = () => {
         token: answer.data.token,
         decodificado: uDecodificado,
       };
+
+      dispatch(login(passport));
+
       console.log(passport);
 
-      /////// missing to create Redux storage for passport
+    
 
-      setMsg(`${uDecodificado.name}, bienvenido de nuevo.`);
+      setMsg(`${uDecodificado.name}, Welcome back .`);
 
       setTimeout(() => {
-        navigate("/login", passport);
+        navigate("/login");
       }, 3000);
     }
   };
