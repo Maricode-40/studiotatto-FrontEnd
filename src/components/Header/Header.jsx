@@ -8,7 +8,6 @@ import "./Header.css";
 import { getUserData, logout } from "../../pages/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-
 function Header() {
   const location = useLocation();
 
@@ -41,7 +40,7 @@ function Header() {
                   Logout
                 </NavDropdown.Item>
               ) : (
-                <p>no hay token</p>
+                <p>there is no token </p>
               )}
               <NavDropdown.Item
                 href="/login"

@@ -29,7 +29,7 @@ export const Profiles = () => {
   };
 
   useEffect(() => {
-    console.log(token);
+    //console.log(token);
     const fetchProfile = async () => {
       const myProfileData = await bringProfile(token);
       setProfileData(myProfileData);
@@ -42,8 +42,8 @@ export const Profiles = () => {
       !inputValidator(profileData.name, "name") ||
       !inputValidator(profileData.email, "email")
     ) {
-      console.log("nombre o email no válidos");
-      setErrorMessage("No se pueden actualizar los datos");
+      console.log("name or email not valid");
+      setErrorMessage("can not update profile data");
       return;
     }
     try {

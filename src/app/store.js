@@ -6,7 +6,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { thunk } from "redux-thunk";
 import appointmentSlice from "../pages/appointmentSlice";
 
-//* define  the  sections that  my store  will have ** important to create the corresponding files *//
+//* define  the  sections or slices that  my store  will have ** important to create the corresponding files *//
 
 const reducers = combineReducers({
   user: userSlice,

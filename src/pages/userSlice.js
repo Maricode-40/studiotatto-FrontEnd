@@ -9,9 +9,9 @@ export const userSlice = createSlice({
       email: "",
       id: "",
     },
-    vecesLogeado: 10,
+    vecesLogeado: 0,
   },
-  //all receive a state and an action and return a new state
+  // receive a state and an action and return a new state
   reducers: {
     login: (state, action) => {
       return {

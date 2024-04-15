@@ -31,7 +31,7 @@ export const updateProfile = async (data, token) => {
     },
   };
   const res = await axios.put(`${API_URL}users/profile`, data, config);
-  console.log(res, "hey there!! i am updateProfile");
+  console.log(res, "hey there!! i am an updated Profile");
   return res;
 };
 

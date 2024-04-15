@@ -15,7 +15,6 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
   text-decoration: inherit;
 }
 a:hover {
@@ -31,8 +30,9 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 4em;
   line-height: 1.1;
+  color: #232337;
 }
 
 button {
@@ -68,5 +68,5 @@ button:focus-visible {
 }
 
 body {
-  background-color: beige;
+  background-color: rgba(243, 197, 243, 0.656);
 }

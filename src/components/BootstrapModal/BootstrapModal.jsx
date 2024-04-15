@@ -41,7 +41,7 @@ function BootstrapModal({ profileData, inputHandler, token }) {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Edita tus datos!</Modal.Title>
+          <Modal.Title>Edit your data!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <CustomInput
@@ -65,7 +65,7 @@ function BootstrapModal({ profileData, inputHandler, token }) {
             nameProp="role"
             placeholderProp="role"
             value={profileData.role}
-            isDisabled="disabled"
+            isDisabled=""
             handlerProp={inputHandler}
           />
         </Modal.Body>
@@ -74,7 +74,7 @@ function BootstrapModal({ profileData, inputHandler, token }) {
             Cancelar
           </Button>
           <Button variant="primary" onClick={handleUpdate}>
-            Guardar cambios
+            Save changes
           </Button>
         </Modal.Footer>
       </Modal>

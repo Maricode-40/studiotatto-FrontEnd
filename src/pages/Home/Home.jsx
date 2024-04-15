@@ -21,21 +21,21 @@ export const Home = () => {
   }, [credentials]);
   return (
     <>
-      <h1>SOY HOME</h1>
-      <h2>Este es el subtítulo</h2>
+      <h1> 🀪 🀪 🀪 </h1>
+      <h2>Welcome to Studio Tatto App</h2>
       <div className="card">
         <button>Bring My Profile</button>
-        <h3>homeee</h3>
+        <h3> 🏡 </h3>
         <CustomInput
           typeProp="email"
           nameProp="email"
-          placeholderProp="introduce tu email"
+          placeholderProp="Go to login and introduce your data"
           handlerProp={inputHandler}
         />
         <CustomInput
           typeProp="password"
           nameProp="password"
-          placeholderProp=""
+          placeholderProp="and password"
           handlerProp={inputHandler}
         />
       </div>
