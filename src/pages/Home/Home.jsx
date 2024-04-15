@@ -29,13 +29,13 @@ export const Home = () => {
         <CustomInput
           typeProp="email"
           nameProp="email"
-          placeholderProp="Go to login and introduce your data"
+          placeholderProp="Go to login and introduce your email address"
           handlerProp={inputHandler}
         />
         <CustomInput
           typeProp="password"
           nameProp="password"
-          placeholderProp="and password"
+          placeholderProp=" & password"
           handlerProp={inputHandler}
         />
       </div>

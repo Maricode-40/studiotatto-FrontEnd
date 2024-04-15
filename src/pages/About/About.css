@@ -1,0 +1,29 @@
+.aboutDesign {
+  min-height: 85vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.aboutText {
+  height: 60vh;
+  width: 80vw;
+  padding: 1em;
+  margin: 2em;
+  margin-right: 0;
+  font-weight: bolder;
+  background-color: #c3d6b0;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutImg {
+  min-height: 45vh;
+  width: 60vw;
+  margin: 2em;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

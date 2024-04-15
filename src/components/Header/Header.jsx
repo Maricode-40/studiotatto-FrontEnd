@@ -34,6 +34,7 @@ function Header() {
             <Nav.Link href="/">Home</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="/profiles">Profiles</NavDropdown.Item>
+              <Nav.Link href="/about">About</Nav.Link>
               <NavDropdown.Divider />
               {token ? (
                 <NavDropdown.Item onClick={() => logMeOut()}>
