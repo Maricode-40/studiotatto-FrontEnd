@@ -4,7 +4,7 @@
   <summary>Content</summary>
   <ol>
     <li><a href="#stack">Stack</a></li>
-    <li><a href="#objetivo-">Objective</a></li>
+    <li><a href="#objective-">Objective</a></li>
     <li><a href="#sobre-el-proyecto-🔎">About the project</a></li>
     <li><a href="#views">Views</a></li>
     <li><a href="#installation">Installation</a></li>
@@ -66,7 +66,6 @@ Some of the views can be seen below:
 <img src="#">
 
 ### Studio appointments/ services
-
 
 <img src="#">
 
