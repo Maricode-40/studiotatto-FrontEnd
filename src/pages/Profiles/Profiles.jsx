@@ -29,7 +29,7 @@ export const Profiles = () => {
   };
 
   useEffect(() => {
-    //console.log(token);
+    console.log(token);
     const fetchProfile = async () => {
       const myProfileData = await bringProfile(token);
       setProfileData(myProfileData);

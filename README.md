@@ -84,9 +84,9 @@ You can follow the steps below:
 1. Clone the repository `git clone`
 2. Install the dependencies `$ npm install` `
 3. Connect our repository to the database docker images- mysql2
-4. Execute the migrations
-5. Run the seeders
-6. Connect the server`$ npm run dev`
+4. Execute the migrations & Run the seeders
+5. New dependencies react-redux, redux-persist ● redux-thunk ● reduxjs/toolkit.
+6. Connect the server`$ npm run dev` Install all of them via your Node package Manager.
 
 As for the frontend, the steps are as follows:
 
