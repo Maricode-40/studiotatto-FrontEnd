@@ -4,7 +4,7 @@
   <summary>Content</summary>
   <ol>
     <li><a href="#stack">Stack</a></li>
-    <li><a href="#objetivo-">objective</a></li>
+    <li><a href="#objetivo-">Objective</a></li>
     <li><a href="#sobre-el-proyecto-🔎">About the project</a></li>
     <li><a href="#views">Views</a></li>
     <li><a href="#installation">Installation</a></li>
@@ -46,7 +46,8 @@ In the following project I have built the frontend of a Studio Tatto using my pr
 
 ## About the project
 
-The aim of this project has been to create the necessary views for the development of the Studio Tatto. Customers can register and log in/ log out. They can also view their profile an dpersonal data to update it. There are three different users the super admin the user and the tatoo artist.
+The aim of this project has been to create the necessary views for the development of the Studio Tatto. Customers can register and log in/ log out.
+They can also view their profile an personal data to update it. There are three different users the super admin the user and the tatoo artist.
 
 ## Views
 
@@ -64,9 +65,12 @@ Some of the views can be seen below:
 
 <img src="#">
 
-### Studio appointments / services
+### Studio appointments/ services
+
 
 <img src="#">
+
+### About
 
 ## Installation
 

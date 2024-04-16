@@ -22,7 +22,8 @@ export const Home = () => {
   return (
     <>
       <h1> 🀪 🀪 🀪 </h1>
-      <h2>Welcome to Studio Tatto App</h2>
+      <h2>Welcome to Studio Tatto</h2>
+      <h3> 🀪 🀪 🀪 </h3>
       <div className="card">
         <button>Bring My Profile</button>
         <h3> 🏡 </h3>
