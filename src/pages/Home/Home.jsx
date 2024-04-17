@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { CustomInput } from "../../components/CustomInput/CustomInput";
+import "./Home.css";
+
 
 export const Home = () => {
   const [count, setCount] = useState(0);
