@@ -5,7 +5,7 @@
   <ol>
     <li><a href="#stack">Stack</a></li>
     <li><a href="#objective-">Objective</a></li>
-    <li><a href="#sobre-el-proyecto-🔎">About the project</a></li>
+    <li><a href="#about-the-project-🔎">About the project</a></li>
     <li><a href="#views">Views</a></li>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#webgrafia">Webgrafia</a></li>
@@ -40,7 +40,7 @@ Used technologies:
 </a>
 </div>
 
-## Objetive
+## Objective
 
 In the following project I have built the frontend of a Studio Tatto using my previous backend project. It has been done as practical experience with react and redux as tools.
 
@@ -83,10 +83,11 @@ You can follow the steps below:
 
 1. Clone the repository `git clone`
 2. Install the dependencies `$ npm install` `
-3. Connect our repository to the database docker images- mysql2
-4. Execute the migrations & Run the seeders
-5. New dependencies `react-redux ` `redux-persist ` ● `redux-thunk  ` ● reduxjs/toolkit.
-6. Connect the server`$ npm run dev` Install all of them via your Node package Manager.
+3. Connect our repository to the database docker images- mysql2.
+4. Execute the migrations & Run the seeders.
+5. New dependencies: `react-redux ` `redux-persist ` ● `redux-thunk `
+   ` reduxjs/toolkit` Install all of them via your Node package Manager.
+6. Connect the server`$ npm run dev`
 
 As for the frontend, the steps are as follows:
 

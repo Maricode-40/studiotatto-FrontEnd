@@ -11,7 +11,7 @@ export const CustomInput = ({
   // props = properties. Properties, are received as an object.
   return (
     <input
-      className="customInputDesign"
+      className="custom-input-design"
       type={typeProp}
       name={nameProp}
       placeholder={placeholderProp}

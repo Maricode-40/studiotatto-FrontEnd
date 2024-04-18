@@ -30,14 +30,14 @@ export const updateProfile = async (data, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
+  console.log(data);
   const res = await axios.put(`${API_URL}users/profile`, data, config);
   console.log(res, "hey there!! i am an updated Profile");
   return res;
 };
 
-// HOME
-// export const getALLBLABLABLA
-//CRUD methods
+// HOME-about user profile
+// export const getALLBLABLABL-CRUD methods
 // .get("url", {headers}(opcional))
 // .post("url", {body}, {headers})
 // .put("url", {body}, {headers})

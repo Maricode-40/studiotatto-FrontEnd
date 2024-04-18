@@ -11,20 +11,18 @@ function BootstrapModal({ profileData, inputHandler, token }) {
   const navigate = useNavigate();
 
   const handleClose = () => {
-    // doble navigate para forzar a recargar el perfil en caso de no querer actualizar los datos,
-    // para que llame de nuevo a la API y los recupere.
     navigate("/");
     setTimeout(() => {
       navigate("/profile");
     });
 
-    console.log("close");
+    //console.log("close");
     setShow(false);
   };
   const handleUpdate = async () => {
     try {
       await updateProfile(profileData, token);
-      console.log("usuario actualizado");
+      console.log("user updated");
       setTimeout(() => {
         setShow(false);
       }, 3000);
@@ -46,9 +44,9 @@ function BootstrapModal({ profileData, inputHandler, token }) {
         <Modal.Body>
           <CustomInput
             typeProp="text"
-            nameProp="name"
-            placeholderProp="name"
-            value={profileData.name}
+            nameProp="firstName"
+            placeholderProp="firstName"
+            value={profileData.firstName}
             isDisabled=""
             handlerProp={inputHandler}
           />
