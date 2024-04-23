@@ -10,5 +10,5 @@ export const appointmentSlice = createSlice({
   },
 });
 
-export const getAppointmentId = (state) => state.appointment;
+export const getAppointment = (state) => state.appointment;
 export default appointmentSlice.reducer;

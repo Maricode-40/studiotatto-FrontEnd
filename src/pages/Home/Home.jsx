@@ -3,24 +3,24 @@
 import { useDispatch } from "react-redux";
 import { decodeToken } from "react-jwt";
 import { login } from "../userSlice";
-import { bringAllUsersCall, loginCall } from "../../services/apiCalls";
+import { loginCall } from "../../services/apiCalls";
 
 export const Home = () => {
   const user = {
-    email: "laray@yahoo.com",
-    password: "password",
+    email: "Gennaro94@yahoo.com",
+    password: "12345678",
   };
 
   const superadmin = {
-    email: "superadmin2@superadmin.com",
-    password: "password",
+    email: "superadmin3@superadmin.com",
+    password: "12345678",
   };
 
   const dispatch = useDispatch();
 
   const loginMe = async (role) => {
     console.log(role);
-    const answer = await bringAllUsersCall(role);
+    const answer = await loginCall(role);
 
     if (answer.data.token) {
       const uDecodificado = decodeToken(answer.data.token);

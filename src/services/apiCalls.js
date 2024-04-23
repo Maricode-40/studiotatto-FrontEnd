@@ -40,7 +40,7 @@ export const updateProfile = async (data, token) => {
 };
 
 export const bringAllUsersCall = async (token) => {
-  console.log(token);
+  //console.log(token);
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,

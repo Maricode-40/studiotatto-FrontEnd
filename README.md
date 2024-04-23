@@ -47,7 +47,7 @@ In the following project I have built the frontend of a Studio Tatto using my pr
 ## About the project
 
 The aim of this project has been to create the necessary views for the development of the Studio Tatto. Customers can register and log in/ log out.
-They can also view their profile an personal data to update it. There are three different users the super admin the user and the tatoo artist.
+They can also view their profile an personal data to update it. There are three different users the superadmin the user (client) and the tatoo artist.
 
 ## Views
 
@@ -94,6 +94,14 @@ As for the frontend, the steps are as follows:
 1. Clone the repository
 2. `$ npm install`
 3. `$ npm run dev`
+4. Here you have the sample users as client and for superadmin access to the application.
+
+client:
+
+email: Gennaro94@yahoo.com/ password: 12345678
+
+superadmin:
+email:superadmin3@superadmin.com /password: "12345678"
 
 ---
 
