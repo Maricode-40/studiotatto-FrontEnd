@@ -42,7 +42,7 @@ Used technologies:
 
 ## Objective
 
-In the following project I have built the frontend of a Studio Tatto using my previous backend project. It has been done as practical experience with react and redux as tools.
+In the following project I have built the frontend of a Studio Tatto using my previous backend project. It has been done as practical experience with react js. and redux as tools.
 
 ## About the project
 

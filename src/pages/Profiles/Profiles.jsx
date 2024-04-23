@@ -8,7 +8,7 @@ import BootstrapModal from "../../components/BootstrapModal/BootstrapModal";
 
 export const Profiles = () => {
   const [profileData, setProfileData] = useState({
-    name: "",
+    firstName: "",
     email: "",
     role: "",
   });
@@ -29,7 +29,7 @@ export const Profiles = () => {
   };
 
   useEffect(() => {
-    console.log(token);
+    //console.log(token);
     const fetchProfile = async () => {
       const myProfileData = await bringProfile(token);
       setProfileData(myProfileData);
@@ -38,8 +38,9 @@ export const Profiles = () => {
   }, []);
 
   const updateProfileHandler = () => {
+    console.log(profileData);
     if (
-      !inputValidator(profileData.name, "name") ||
+      !inputValidator(profileData.firstName, "firstName") ||
       !inputValidator(profileData.email, "email")
     ) {
       console.log("name or email not valid");
@@ -59,11 +60,12 @@ export const Profiles = () => {
 
   return (
     <>
+      <img src="./img_fondo.jpg" alt="imagetatoo" />
       <CustomInput
         typeProp="text"
-        nameProp="name"
-        placeholderProp="name"
-        value={profileData.name}
+        nameProp="firstName"
+        placeholderProp="firstName"
+        value={profileData.firstName}
         isDisabled={!isEditing}
         handlerProp={inputHandler}
       />
@@ -80,7 +82,7 @@ export const Profiles = () => {
         nameProp="role"
         placeholderProp="role"
         value={profileData.role}
-        isDisabled="disabled"
+        isDisabled=""
         handlerProp={inputHandler}
       />
       {isEditing ? (

@@ -51,6 +51,15 @@ function BootstrapModal({ profileData, inputHandler, token }) {
             handlerProp={inputHandler}
           />
           <CustomInput
+            typeProp="text"
+            nameProp="lastName"
+            placeholderProp="lastName"
+            value={profileData.lastName}
+            isDisabled=""
+            handlerProp={inputHandler}
+          />
+
+          <CustomInput
             typeProp="email"
             nameProp="email"
             placeholderProp="email"

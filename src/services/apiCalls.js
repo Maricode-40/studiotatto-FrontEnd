@@ -9,7 +9,10 @@ export const registerNewUserCall = async (credentials) => {
 };
 
 export const loginCall = async (credentials) => {
-  return await axios.post(`${API_URL}auth/login`, credentials);
+  console.log(credentials, "soy credencials en loginCall");
+  const res = await axios.post(`${API_URL}auth/login`, credentials);
+  console.log(res);
+  return res;
 };
 
 export const bringProfile = async (token) => {
@@ -34,6 +37,20 @@ export const updateProfile = async (data, token) => {
   const res = await axios.put(`${API_URL}users/profile`, data, config);
   console.log(res, "hey there!! i am an updated Profile");
   return res;
+};
+
+export const bringAllUsersCall = async (token) => {
+  console.log(token);
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  return axios.get(`${API_URL}auth/users`, config);
+
+  //const res = await axios.get(`${API_URL}users/profile`, config);
+  //console.log(res, "bring All users");
 };
 
 // HOME-about user profile

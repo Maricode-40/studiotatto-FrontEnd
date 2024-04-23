@@ -1,46 +1,46 @@
-import { useEffect, useState } from "react";
-import { CustomInput } from "../../components/CustomInput/CustomInput";
-import "./Home.css";
+//import "./Home.css";
 
+import { useDispatch } from "react-redux";
+import { decodeToken } from "react-jwt";
+import { login } from "../userSlice";
+import { bringAllUsersCall, loginCall } from "../../services/apiCalls";
 
 export const Home = () => {
-  const [count, setCount] = useState(0);
-  const [credentials, setCredentials] = useState({
-    email: "",
-    password: "",
-  });
-
-  const inputHandler = (event) => {
-    setCredentials((prevState) => ({
-      ...prevState,
-      [event.target.name]: event.target.value,
-    }));
+  const user = {
+    email: "laray@yahoo.com",
+    password: "password",
   };
-  useEffect(() => {}, [count]);
 
-  useEffect(() => {
-    console.log(credentials);
-  }, [credentials]);
+  const superadmin = {
+    email: "superadmin2@superadmin.com",
+    password: "password",
+  };
+
+  const dispatch = useDispatch();
+
+  const loginMe = async (role) => {
+    console.log(role);
+    const answer = await bringAllUsersCall(role);
+
+    if (answer.data.token) {
+      const uDecodificado = decodeToken(answer.data.token);
+      const passport = {
+        token: answer.data.token,
+        decodificado: uDecodificado,
+      };
+      dispatch(login(passport));
+      console.log(passport);
+    }
+  };
   return (
     <>
       <h1> 🀪 🀪 🀪 </h1>
-      <h2>Welcome to Studio Tatto</h2>
+      <h2>Welcome to My Studio Tatto</h2>
       <h3> 🀪 🀪 🀪 </h3>
       <div className="card">
-        <button>Bring My Profile</button>
+        <button onClick={() => loginMe(user)}>Login as User </button>
+        <button onClick={() => loginMe(superadmin)}>Login as SuperAdmin</button>
         <h3> 🏡 </h3>
-        <CustomInput
-          typeProp="email"
-          nameProp="email"
-          placeholderProp="Go to login and introduce your email address"
-          handlerProp={inputHandler}
-        />
-        <CustomInput
-          typeProp="password"
-          nameProp="password"
-          placeholderProp=" & password"
-          handlerProp={inputHandler}
-        />
       </div>
     </>
   );
