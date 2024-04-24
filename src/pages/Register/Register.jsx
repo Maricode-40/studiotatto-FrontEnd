@@ -71,7 +71,7 @@ export const Register = () => {
           />
 
           <ButtonC
-            title={"reister!"}
+            title={"Register Now!"}
             className={"regularButtonClass"}
             functionEmit={registerMe}
           />

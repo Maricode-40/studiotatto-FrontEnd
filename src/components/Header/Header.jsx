@@ -15,7 +15,7 @@ function Header() {
 
   const myPassport = useSelector(getUserData);
   const token = myPassport?.token;
-  console.log(myPassport);
+  //console.log(myPassport);
 
   const logMeOut = () => {
     dispatch(logout());

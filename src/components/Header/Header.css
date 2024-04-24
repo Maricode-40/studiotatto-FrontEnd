@@ -1,4 +1,6 @@
-.elementNew {
-  color: blueviolet !important;
+div.container {
+  background-color: rgb(179, 100, 71);
+  border: 2px solid;
+  border-radius: 13em, 13em solid black;
   font-weight: bold;
 }

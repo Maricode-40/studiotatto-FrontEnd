@@ -9,6 +9,7 @@ import { loginCall } from "../../services/apiCalls";
 import { decodeToken } from "react-jwt";
 import { useDispatch } from "react-redux";
 import { login } from "../userSlice";
+import { inputValidator } from "../../utils/validators";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -17,7 +18,12 @@ export const Login = () => {
     email: "",
     password: "",
   });
-
+  // useState que lleva la cuenta del formato de los inputs y si el contenido es válido
+  const [isValidContent, setIsValidContent] = useState({
+    email: "",
+    password: "",
+  });
+  const [loginError, setLoginError] = useState("");
   const [msg, setMsg] = useState("");
 
   const dispatch = useDispatch();
@@ -30,29 +36,44 @@ export const Login = () => {
     }));
   };
 
+  const inputValidatorHandler = (e) => {
+    const errorMessage = inputValidator(e.target.value, e.target.name);
+    setIsValidContent((prevState) => ({
+      ...prevState,
+      [e.target.name]: errorMessage,
+    }));
+  };
+
   const loginMe = async () => {
-    //this function is going to  trigger the login
-    const answer = await loginCall(credentials);
-    //console.log(answer);
-    if (answer.data.token) {
-      const uDecodificado = decodeToken(answer.data.token);
+    try {
+      //this function is going to  trigger the login
+      const answer = await loginCall(credentials);
+      //console.log(answer);
+      if (answer.data.token) {
+        const uDecodificado = decodeToken(answer.data.token);
 
-      const passport = {
-        token: answer.data.token,
-        decodificado: uDecodificado,
-      };
+        const passport = {
+          token: answer.data.token,
+          decodificado: uDecodificado,
+        };
 
-      dispatch(login(passport));
+        dispatch(login(passport));
 
-      console.log(passport);
+        console.log(passport);
 
-    
+        setMsg(`${uDecodificado.firstName}, Welcome back .`);
 
-      setMsg(`${uDecodificado.name}, Welcome back .`);
-
-      setTimeout(() => {
-        navigate("/login");
-      }, 3000);
+        setTimeout(() => {
+          navigate("/login");
+        }, 3000);
+      }
+    } catch (error) {
+      console.log(error);
+      if (error.code === "ERR_NETWORK") {
+        setLoginError("server is down");
+      } else {
+        setLoginError(error.response.data.error);
+      }
     }
   };
 
@@ -62,22 +83,30 @@ export const Login = () => {
         <>
           <img src={tatoo1} alt="Tatoo hands" /> {""}
           <CustomInput
+            isValidContent={isValidContent.email}
             typeProp={"email"}
             nameProp={"email"}
             handlerProp={(e) => inputHandler(e)}
-            placeholderProp={"enter your e-mail"}
+            placeholderProp={"escribe tu e-mail"}
+            // función que se dispara al clickar fuera del input y valida el contenido
+            onBlurHandler={(e) => inputValidatorHandler(e)}
+            errorText={isValidContent.email}
           />
           <CustomInput
+            isValidContent={isValidContent.password}
             typeProp={"password"}
             nameProp={"password"}
             handlerProp={(e) => inputHandler(e)}
-            placeholderProp={"enter your password"}
+            placeholderProp={"escribe el password"}
+            onBlurHandler={(e) => inputValidatorHandler(e)}
+            errorText={isValidContent.password}
           />
           <ButtonC
             title={"log me!"}
             className={"regularButtonClass"}
             functionEmit={loginMe}
           />
+          <h2>{loginError}</h2>
         </>
       ) : (
         <div>{msg}</div>

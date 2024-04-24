@@ -47,10 +47,17 @@ export const bringAllUsersCall = async (token) => {
     },
   };
 
-  return axios.get(`${API_URL}auth/users`, config);
+  return axios.get(`${API_URL}users`, config);
+};
 
-  //const res = await axios.get(`${API_URL}users/profile`, config);
-  //console.log(res, "bring All users");
+export const deleteUserById = async (id, token) => {
+  //console.log(id, token);
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return axios.delete(`${API_URL}auth/users/${id}`, config);
 };
 
 // HOME-about user profile

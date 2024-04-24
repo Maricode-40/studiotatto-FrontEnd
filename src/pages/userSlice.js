@@ -5,6 +5,7 @@ export const userSlice = createSlice({
   initialState: {
     token: "",
     decodificado: {
+      userRole: "",
       name: "",
       email: "",
       id: "",
@@ -48,4 +49,8 @@ export const { login, logout, resetCount } = userSlice.actions;
 // we define and export the methods that will allow us to come to the storage to read information
 export const getUserData = (state) => state.user;
 export const getLoggedAmount = (state) => state.user.vecesLogeado;
+// método que nos dice si el usuario logeado es admin o no para uso en rutas de admins
+export const amIAdmin = (state) =>
+  state.user.decodificado.userRole === "superadmin";
+
 export default userSlice.reducer;
