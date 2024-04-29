@@ -31,7 +31,7 @@ export const Home = () => {
       console.log(passport);
       dispatch(login(passport));
 
-      console.log(passport);
+      //console.log(passport);
     }
   };
   return (

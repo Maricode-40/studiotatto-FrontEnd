@@ -39,7 +39,7 @@ export const updateProfile = async (data, token) => {
   return res;
 };
 
-export const bringAllUsersCall = async (token) => {
+export const bringAllUsersCall = (token) => {
   //console.log(token);
   const config = {
     headers: {

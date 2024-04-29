@@ -11,6 +11,6 @@ export const AdminRoute = ({ Component }) => {
    */
 
   const isAdmin = useSelector(amIAdmin);
-  console.log(useSelector(getUserData));
+  //console.log(useSelector(getUserData));
   return isAdmin ? <Component /> : <Navigate to="/" />;
 };
