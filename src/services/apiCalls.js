@@ -50,14 +50,25 @@ export const bringAllUsersCall = (token) => {
   return axios.get(`${API_URL}users`, config);
 };
 
-export const deleteUserById = async (id, token) => {
-  //console.log(id, token);
+export const deleteUserById = (id, token) => {
+  console.log(token);
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   };
-  return axios.delete(`${API_URL}auth/users/${id}`, config);
+  return axios.delete(`${API_URL}users/${id}`, config);
+};
+
+export const bringAppointments = async (id, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const res = await axios.get(`${API_URL}users/${id}/appointments`, config);
+  console.log(res);
+  return res.data;
 };
 
 // HOME-about user profile

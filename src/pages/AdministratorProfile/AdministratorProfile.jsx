@@ -6,7 +6,7 @@ import "./AdministratorProfile.css";
 
 export const AdministratorProfile = () => {
   const [users, setUsers] = useState([]);
-  //const [areYouDeletingMe, setAreYouDeletingMe] = useState([null]);
+  const [areYouDeletingMe, setAreYouDeletingMe] = useState([null]);
 
   const userReduxData = useSelector(getUserData);
   const token = userReduxData.token;
@@ -25,18 +25,20 @@ export const AdministratorProfile = () => {
   }, [users]);
 
   const deleteUser = async (id) => {
+    //console.log(users);
     const res = await deleteUserById(id, token);
     console.log(res);
   };
 
-  // initiates the deletion of the user and shows or hides the confirmation button
-  //const deleteUserStepOne = (id) => {
-  //  if (areYouDeletingMe === id) {
-  //   setAreYouDeletingMe(null);
-  //  } else {
-  //    setAreYouDeletingMe(id);
-  //   }
-  //  };
+  // initiates the deletion of the user and shows or hides the confirmation button,
+  //delete confirmation button. that checks if the useState that keeps track of which user's record is being deleted is yours, in which case it is displayed.
+  const deleteUserStepOne = (id) => {
+    if (areYouDeletingMe === id) {
+      setAreYouDeletingMe(null);
+    } else {
+      setAreYouDeletingMe(id);
+    }
+  };
 
   return (
     <>
@@ -58,15 +60,24 @@ export const AdministratorProfile = () => {
                 <td>{users.firstName}</td>
                 <td>{users.lastName}</td>
                 <td>{users.email}</td>
+                <td>
+                  <div
+                    className="deleteButton"
+                    onClick={() => deleteUserStepOne(users.id)}
+                  ></div>
+                  <div
+                    className={
+                      areYouDeletingMe === users.id
+                        ? "deleteButton confirm-delete "
+                        : "deleteButton confirm-delete display-none"
+                    }
+                    onClick={(e) => deleteUser(users.id)}
+                  ></div>
+                </td>
               </tr>
             ))}
         </tbody>
       </table>
-      <div className="deleteButton" onClick={() => deleteUser(users.id)}></div>
-      <div
-        className="upgradeButton"
-        onClick={() => fetchProfile(users.id)}
-      ></div>
     </>
   );
 };

@@ -88,20 +88,21 @@ You can follow the steps below:
 5. New dependencies: `react-redux ` `redux-persist ` ● `redux-thunk `
    ` reduxjs/toolkit` Install all of them via your Node package Manager.
 6. Connect the server`$ npm run dev`
+7. <a href="https://github.com/Maricode-40/Studiotatto-backend"> Check Backend in full  </a>
+
+</a>
 
 As for the frontend, the steps are as follows:
 
 1. Clone the repository
 2. `$ npm install`
 3. `$ npm run dev`
-4. Here you have the sample users as client and for superadmin access to the application.
+4. Here you can find below the sample of users as client and superadmin.
 
-client:
+client email: Gennaro94@yahoo.com
+/ password: 12345678
 
-email: Gennaro94@yahoo.com/ password: 12345678
-
-superadmin:
-email:superadmin3@superadmin.com /password: "12345678"
+superadmin email:superadmin3@superadmin.com /password: 12345678
 
 ---
 

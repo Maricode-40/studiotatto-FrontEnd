@@ -59,7 +59,7 @@ export const Login = () => {
 
         dispatch(login(passport));
 
-        console.log(passport);
+        //console.log(passport, uDecodificado, answer.data);
 
         setMsg(`${uDecodificado.firstName}, Welcome back .`);
 
