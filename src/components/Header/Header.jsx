@@ -33,6 +33,9 @@ function Header() {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/appointments">
+                Appointments
+              </NavDropdown.Item>
               <NavDropdown.Item href="/profiles">Profiles</NavDropdown.Item>
               <Nav.Link href="/about">About</Nav.Link>
               <NavDropdown.Divider />
