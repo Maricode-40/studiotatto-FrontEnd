@@ -15,6 +15,22 @@ export const loginCall = async (credentials) => {
   return res;
 };
 
+export const appointmentCreate = async (appsDate, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  console.log(appsDate, "any date created?");
+  const res = await axios.post(
+    `${API_URL}users/appointments`,
+    appsDate,
+    config
+  );
+  console.log(config, "AY WEYYY");
+  return res;
+};
+
 export const bringProfile = async (token) => {
   const config = {
     headers: {
