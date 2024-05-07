@@ -58,7 +58,7 @@ export const Appointments = () => {
 
   return (
     <>
-      <div>
+      <div className="first">
         Actual date: {dayjs(appointments).format("dddd, MMMM D, YYYY h:mm A")}
       </div>
       <DayPicker
@@ -68,7 +68,9 @@ export const Appointments = () => {
           setSelected(dayjs(e).format("dddd, MMMM D, YYYY h:mm A"))
         }
       />
-      <div>{selected && <div> Selected date: {selected}</div>} </div>
+      <div className="second">
+        {selected && <div> Selected date: {selected}</div>}{" "}
+      </div>
 
       <button onClick={() => dateCreation(appsDate)}>Create</button>
 

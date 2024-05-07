@@ -3,11 +3,14 @@
   width: 100vw;
   display: flex;
   flex-direction: column-reverse;
+  text-shadow: 2px 6px 5px rgba(0, 0, 0, 0.5);
+  font-size: small;
+  font-family: monospace;
 }
 
 .aboutText {
   height: 60vh;
-  width: 80vw;
+  width: 90vw;
   padding: 1em;
   margin: 2em;
   margin-right: 0;
@@ -19,8 +22,8 @@
 }
 
 .aboutImg {
-  min-height: 45vh;
-  width: 60vw;
+  min-height: 30vh;
+  width: 80vw;
   margin: 2em;
   padding: 1em;
   display: flex;

@@ -38,7 +38,7 @@ export const Home = () => {
     <>
       <h1> 🀪 🀪 🀪 </h1>
 
-      <h2>Welcome to My Studio Tatto</h2>
+      <h2>Welcome to My Art Tatto Studio </h2>
 
       <h3> 🀪 🀪 🀪 </h3>
       <div className="card">

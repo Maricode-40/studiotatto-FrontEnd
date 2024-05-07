@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(230, 233, 222, 0.734);
+  color: rgba(232, 237, 218, 0.734);
   background-color: #242424;
 
   font-synthesis: none;
@@ -32,7 +32,7 @@ body {
 h1 {
   font-size: 4em;
   line-height: 1.1;
-  color: #232337;
+  color: #c9dddd;
 }
 
 button {
@@ -68,5 +68,21 @@ button:focus-visible {
 }
 
 body {
-  background-color: #F4A460;
+  background-image: url(../public/arttatoo.jpg);
+}
+
+h2 {
+  color: #f9f9f9;
+  text-shadow: 2px 6px 5px rgba(177, 210, 130, 0.796);
+  font-size: larger;
+  font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", "Myriad Pro", Arial, sans-serif;
+}
+
+h3{
+color: #f9f9f9;
+  text-shadow: 2px 6px 5px rgba(177, 210, 130, 0.796);
+  font-size: larger;
+  font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", "Myriad Pro", Arial, sans-serif;
 }

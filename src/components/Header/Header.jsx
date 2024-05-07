@@ -26,7 +26,7 @@ function Header() {
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand href="/">
-          My First App 🕸️ Studio Tatoo 🕸️ {myPassport.vecesLogeado}
+          My First App 🕸️ Tatoo Studio 🕸️ {myPassport.vecesLogeado}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

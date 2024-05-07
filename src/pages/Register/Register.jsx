@@ -50,6 +50,9 @@ export const Register = () => {
     <div className="register-container registerElementsDesign">
       {msg === "" ? (
         <>
+          <h1 className="pt-4 text-black text-center">
+            Welcome to 🀪 Art Tatto Studio
+          </h1>
           <CustomInput
             typeProp={"text"}
             nameProp={"firstName"}
@@ -62,14 +65,12 @@ export const Register = () => {
             handlerProp={(e) => inputHandler(e)}
             placeholderProp={"enter your e-mail"}
           />
-
           <CustomInput
             typeProp={"password"}
             nameProp={"password"}
             handlerProp={(e) => inputHandler(e)}
             placeholderProp={"enter your password"}
           />
-
           <ButtonC
             title={"Register Now!"}
             className={"regularButtonClass"}
