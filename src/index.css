@@ -69,6 +69,11 @@ button:focus-visible {
 
 body {
   background-image: url(../arttatoo.jpg);
+  position: absolute;
+  /* min-width: 800px;
+  width: 100%;
+  min-height: 100%;
+  */
 }
 
 h2 {
