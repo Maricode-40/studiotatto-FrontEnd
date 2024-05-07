@@ -20,7 +20,10 @@ export const Appointments = () => {
   const [selected, setSelected] = useState();
   const [appointmentId, setAppointmentId] = useState([""]);
 
+  //we store them the we retrieve the appointments
+
   const [citas, setCitas] = useState([]);
+
   const userReduxData = useSelector(getUserData);
   const token = userReduxData.token;
   const userId = userReduxData.decodificado.userId;
@@ -41,15 +44,15 @@ export const Appointments = () => {
         try {
           //console.log(token);
           const fetched = await bringAppointments(userId, token);
-          console.log(fetched);
-          setCitas(fetched.data.appointments);
+          //console.log(fetched.appointments);
+          setCitas(fetched.appointments);
         } catch (error) {
           console.log(error);
         }
       };
 
       fetchAppointments();
-      console.log(citas);
+      // console.log(citas);
     }
   }, [appointmentId]);
 
@@ -70,11 +73,18 @@ export const Appointments = () => {
       <button onClick={() => dateCreation(appsDate)}>Create</button>
 
       <div className="appointsDesign">
-        {appointmentId.map((appointmentDate) => (
-          <div key={appointmentDate.id}></div>
+        {citas.map((cita) => (
+          <div key={cita.id}>
+            <h1 className="appsNumber"> User- ID: {cita.id} </h1>
+
+            <h2 className="listApps">
+              {" "}
+              Appointment Date: {cita.appointmentDate}
+            </h2>
+            <h3 className="userSearch"> Type Of Service - {cita.serviceId}</h3>
+          </div>
         ))}
       </div>
-      <h1></h1>
     </>
   );
 };
