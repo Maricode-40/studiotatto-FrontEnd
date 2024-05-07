@@ -21,13 +21,9 @@ export const appointmentCreate = async (appsDate, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  //console.log(appsDate, "any date created?");
-  const res = await axios.post(
-    `${API_URL}users/appointments`,
-    appsDate,
-    config
-  );
-  //console.log(config, "AY WEYYY");
+  console.log(appsDate, "any date created?");
+  const res = await axios.post(`${API_URL}appointments`, appsDate, config);
+  console.log(config, "AY WEYYY");
   return res;
 };
 

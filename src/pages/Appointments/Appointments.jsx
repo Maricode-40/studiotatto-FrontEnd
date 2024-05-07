@@ -20,8 +20,7 @@ export const Appointments = () => {
   const [selected, setSelected] = useState();
   const [appointmentId, setAppointmentId] = useState([""]);
 
-  //we store them the we retrieve the appointments
-
+  //we store them and then we retrieve/recall the appointments.
   const [citas, setCitas] = useState([]);
 
   const userReduxData = useSelector(getUserData);
@@ -80,7 +79,6 @@ export const Appointments = () => {
             <h1 className="appsNumber"> User- ID: {cita.id} </h1>
 
             <h2 className="listApps">
-              {" "}
               Appointment Date: {cita.appointmentDate}
             </h2>
             <h3 className="userSearch"> Type Of Service - {cita.serviceId}</h3>

@@ -6,3 +6,7 @@ img {
   display: flex;
   flex-direction: column;
 }
+
+div {
+  color: antiquewhite;
+}

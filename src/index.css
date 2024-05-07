@@ -68,7 +68,7 @@ button:focus-visible {
 }
 
 body {
-  background-image: url(../public/arttatoo.jpg);
+  background-image: url(../arttatoo.jpg);
 }
 
 h2 {
@@ -79,8 +79,8 @@ h2 {
     Roboto, "Helvetica Neue", "Myriad Pro", Arial, sans-serif;
 }
 
-h3{
-color: #f9f9f9;
+h3 {
+  color: #f9f9f9;
   text-shadow: 2px 6px 5px rgba(177, 210, 130, 0.796);
   font-size: larger;
   font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI",
