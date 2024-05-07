@@ -70,7 +70,6 @@ export const Appointments = () => {
       <div className="second">
         {selected && <div> Selected date: {selected}</div>}{" "}
       </div>
-
       <button onClick={() => dateCreation(appsDate)}>Create</button>
 
       <div className="appointsDesign">
