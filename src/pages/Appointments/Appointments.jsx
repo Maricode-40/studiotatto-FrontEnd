@@ -9,6 +9,7 @@ import "react-day-picker/dist/style.css";
 import { appointmentCreate } from "../../services/apiCalls";
 import { bringAppointments } from "../../services/apiCalls";
 
+
 export const Appointments = () => {
   const [appsDate, setAppsDate] = useState({
     appointmentDate: "",
@@ -30,7 +31,7 @@ export const Appointments = () => {
   const dateCreation = async () => {
     try {
       const res = await appointmentCreate(appsDate, token);
-      console.log(res);
+      console.log(res.appsDate);
     } catch (error) {
       console.log(error);
     }
