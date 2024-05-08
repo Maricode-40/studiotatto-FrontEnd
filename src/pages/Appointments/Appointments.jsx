@@ -6,9 +6,8 @@ import { getUserData } from "../userSlice";
 import dayjs from "dayjs";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
-import { appointmentCreate } from "../../services/apiCalls";
-import { bringAppointments } from "../../services/apiCalls";
-
+import { appointmentCreate, bringAppointments } from "../../services/apiCalls";
+import { CustomInput } from "../../components/CustomInput/CustomInput";
 
 export const Appointments = () => {
   const [appsDate, setAppsDate] = useState({
@@ -20,18 +19,26 @@ export const Appointments = () => {
   const [appointments, setAppointment] = useState(Date());
   const [selected, setSelected] = useState();
   const [appointmentId, setAppointmentId] = useState([""]);
-
   //we store them and then we retrieve/recall the appointments.
   const [citas, setCitas] = useState([]);
 
+  // we get the data from Redux
   const userReduxData = useSelector(getUserData);
   const token = userReduxData.token;
   const userId = userReduxData.decodificado.userId;
 
+  const inputHandlerAppointment = (e) => {
+    //console.log(typeof e.target.value, e.target.name);
+    setAppsDate((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   const dateCreation = async () => {
     try {
       const res = await appointmentCreate(appsDate, token);
-      console.log(res.appsDate);
+      console.log(res.data);
     } catch (error) {
       console.log(error);
     }
@@ -71,6 +78,26 @@ export const Appointments = () => {
       <div className="second">
         {selected && <div> Selected date: {selected}</div>}{" "}
       </div>
+
+      <CustomInput
+        typeProp="date"
+        nameProp="appointmentDate"
+        placeholderProp="Appointmentdate"
+        handlerProp={(e) => inputHandlerAppointment(e)}
+      />
+      <CustomInput
+        typeProp="number"
+        nameProp="userId"
+        placeholderProp="roleId"
+        handlerProp={(e) => inputHandlerAppointment(e)}
+      />
+
+      <CustomInput
+        typeProp="number"
+        nameProp="serviceId"
+        placeholderProp="serviceId"
+        handlerProp={(e) => inputHandlerAppointment(e)}
+      />
       <button onClick={() => dateCreation(appsDate)}>Create</button>
 
       <div className="appointsDesign">

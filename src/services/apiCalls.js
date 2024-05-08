@@ -9,21 +9,9 @@ export const registerNewUserCall = async (credentials) => {
 };
 
 export const loginCall = async (credentials) => {
-  console.log(credentials, "soy credencials en loginCall");
+  //console.log(credentials, "soy credencials en loginCall");
   const res = await axios.post(`${API_URL}auth/login`, credentials);
-  console.log(res);
-  return res;
-};
-
-export const appointmentCreate = async (appsDate, token) => {
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-  console.log(appsDate, "any date created?");
-  const res = await axios.post(`${API_URL}appointments`, appsDate, config);
-  console.log(config, "AY WEYYY");
+  //console.log(res);
   return res;
 };
 
@@ -72,6 +60,7 @@ export const deleteUserById = (id, token) => {
   return axios.delete(`${API_URL}users/${id}`, config);
 };
 
+//BRING ALL APPOINTMENTS AS ADMIN- all good and  tested
 export const bringAppointments = async (id, token) => {
   const config = {
     headers: {
@@ -81,6 +70,43 @@ export const bringAppointments = async (id, token) => {
   const res = await axios.get(`${API_URL}users/${id}/appointments`, config);
   //console.log(res);
   return res.data;
+};
+
+//CREATE APPOINTMENTs
+export const appointmentCreate = async (appsDate, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  console.log(appsDate, "any date created?");
+  const res = await axios.post(`${API_URL}appointments`, appsDate, config);
+  console.log(config, "AY WEYYY");
+  return res;
+};
+
+//update appointments needs to be fixed
+export const updateAppointments = async (appsDate, token, id) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const res = await axios.put(`${API_URL}appoitnments/${id}`, appsDate, config);
+  return res;
+};
+
+//delete appointment
+export const deleteAppointments = async (id, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const res = await axios.delete(`${API_URL}appointments/${id}`, config);
+  return res;
 };
 
 // HOME-about user profile
