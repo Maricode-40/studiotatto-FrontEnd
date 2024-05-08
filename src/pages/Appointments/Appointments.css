@@ -65,3 +65,8 @@ button {
 div {
   color: whitesmoke;
 }
+
+h4{
+  color:rgba(79, 6, 13, 0.83);
+  text-shadow: 2px 6px 5px rgba(150, 225, 46, 0.796);
+}
