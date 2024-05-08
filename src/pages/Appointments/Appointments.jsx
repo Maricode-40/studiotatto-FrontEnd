@@ -98,7 +98,7 @@ export const Appointments = () => {
         placeholderProp="serviceId"
         handlerProp={(e) => inputHandlerAppointment(e)}
       />
-      <h4>Create appointments</h4>
+      <h4>Create Appointments</h4>
       <button onClick={() => dateCreation(appsDate)}>Create</button>
 
       <div className="appointsDesign">
