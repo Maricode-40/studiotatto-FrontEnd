@@ -51,7 +51,7 @@ export const Register = () => {
       {msg === "" ? (
         <>
           <h1 className="pt-4 text-black text-center">
-            Welcome to 🀪 Art Tatto Studio
+            Welcome to Tatto Studio App
           </h1>
           <CustomInput
             typeProp={"text"}

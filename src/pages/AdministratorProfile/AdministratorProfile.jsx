@@ -50,6 +50,7 @@ export const AdministratorProfile = () => {
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
+            <th>Delete 😱</th>
           </tr>
         </thead>
         <tbody>

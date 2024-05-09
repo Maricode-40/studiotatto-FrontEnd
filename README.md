@@ -61,11 +61,11 @@ Some of the views can be seen below:
 
 ### Home
 
-<img src="#">
+<img src="./public/home.png">
 
 ### Register
 
-<img src="#">
+<img src="./public/register.png">
 
 ### Profile
 
@@ -73,9 +73,15 @@ Some of the views can be seen below:
 
 ### Studio appointments/ services
 
-<img src="#">
+<img src="./public/services.png">
 
 ### About
+
+<img src="./public/about.png">
+
+## ADMIN views
+
+<img src="./public/adminview.png">
 
 ## Installation
 

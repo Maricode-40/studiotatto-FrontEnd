@@ -5,8 +5,13 @@
 
 h1 {
   margin-bottom: 0.5rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.5;
-  text-shadow: 2px 6px 5px rgba(238, 209, 17, 0.5);
-  color: aliceblue;
+  font-family: monospace;
+  text-shadow: 2px 6px 5px rgba(225, 220, 189, 0.5);
+  color: rgb(185, 201, 215);
+}
+
+div.regularButtonClass {
+  justify-content: center;
 }
