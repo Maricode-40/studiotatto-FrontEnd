@@ -82,13 +82,13 @@ export const Appointments = () => {
       <CustomInput
         typeProp="date"
         nameProp="appointmentDate"
-        placeholderProp="Appointmentdate"
+        placeholderProp="AppointmentDate"
         handlerProp={(e) => inputHandlerAppointment(e)}
       />
       <CustomInput
         typeProp="number"
         nameProp="userId"
-        placeholderProp="roleId"
+        placeholderProp="userId"
         handlerProp={(e) => inputHandlerAppointment(e)}
       />
 
