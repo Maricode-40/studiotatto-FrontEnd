@@ -69,7 +69,7 @@ Some of the views can be seen below:
 
 ### Profile
 
-<img src="#">
+<img src="./public/profileview.png">
 
 ### Studio appointments/ services
 
@@ -117,6 +117,7 @@ client email: Gennaro94@yahoo.com
 
 superadmin email:superadmin3@superadmin.com /password: 12345678
 
+## Vercel Deploy 
 ---
 
 ## Licence
