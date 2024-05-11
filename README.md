@@ -124,10 +124,10 @@ superadmin email:superadmin3@superadmin.com /password: 12345678
 ## Future Improvements
 
 We are going to modify the list of appointments and clients by adding a Modal Custom or a React Portal.
-We can improve the seeder for appointments by fixing that table structure and finally we will install Cypress to do some testings on the Frontend.
+We can improve the seeder for appointments by fixing that table structure and finally we will install Cypress to run some testings on the Frontend side.
+
 
 ## Licence
-
 This project is under MIT licence.
 
 ## Webgrafia:
