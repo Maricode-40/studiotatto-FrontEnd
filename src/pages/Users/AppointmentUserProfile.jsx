@@ -67,9 +67,9 @@ export const AppointmentUserCreate = () => {
   const editAppointmentCall = async () => {
     try {
       await editAppointmentCall(userApps, token);
-      console.log("Cita editada");
+      console.log("edited appointments");
     } catch (error) {
-      console.log("Error editando cita:" + error);
+      console.log("Error editing appointment:" + error);
     }
   };
 

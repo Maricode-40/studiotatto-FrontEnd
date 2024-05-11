@@ -96,7 +96,7 @@ You can follow the steps below:
 1. Clone the repository `git clone`
 2. Install the dependencies `$ npm install` `
 3. Connect our repository to the database docker images- mysql2.
-4. Execute the migrations & Run the seeders. In my case I have made a separate mysql file in workbench for my seeders appointments. 
+4. Execute the migrations & Run the seeders. In my case I have made a separate mysql file in workbench for my seeders appointments.
    <img src="./public/db.png">
 5. New dependencies: `react-redux ` `redux-persist ` ● `redux-thunk `
    ` reduxjs/toolkit` Install all of them via your Node package Manager.
@@ -117,8 +117,14 @@ client email: Gennaro94@yahoo.com
 
 superadmin email:superadmin3@superadmin.com /password: 12345678
 
-## Vercel Deploy 
+## Vercel Deploy
+
 ---
+
+## Future Improvements
+
+We are going to modify the list of appointments and clients by adding a Modal Custom or a React Portal.
+We can improve the seeder for appointments by fixing that table structure and finally we will install Cypress to do some testings on the Frontend.
 
 ## Licence
 
