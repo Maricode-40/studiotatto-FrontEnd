@@ -1,0 +1,6 @@
+.userNewApps{
+  background-color: rgba(207, 208, 129, 0.773);
+  display: flex;
+  flex-direction: column;
+  font-size: 5px;
+}

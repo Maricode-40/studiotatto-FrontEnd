@@ -68,36 +68,65 @@ export const bringAppointments = async (id, token) => {
     },
   };
   const res = await axios.get(`${API_URL}users/${id}/appointments`, config);
-  //console.log(res);
+  console.log(res);
   return res.data;
 };
 
-//CREATE APPOINTMENTs
+//CREATE APPOINTMENTS AS ADMIN
 export const appointmentCreate = async (appsDate, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   };
-  console.log(appsDate, "any date created?");
+  //console.log(appsDate, "any admin date created?");
   const res = await axios.post(`${API_URL}appointments`, appsDate, config);
-  console.log(config, "AY WEYYY");
+  //console.log(config, "Admincall");
   return res;
 };
 
-//update appointments needs to be fixed
-export const updateAppointments = async (appsDate, token, id) => {
+//for user clients creation
+export const createUserAppointments = async (userApps, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   };
+  console.log(userApps, "any date created?");
+  const res = await axios.post(
+    `${API_URL}users/appointments`,
+    userApps,
+    config
+  );
+  console.log(config, "AY WEYYY");
 
-  const res = await axios.put(`${API_URL}appoitnments/${id}`, appsDate, config);
+  return res;
+};
+//update appointments for users  needs to be fixed
+export const editAppointmentCall = async (userApps, token, id) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  console.log(userApps, "any date created?");
+  const res = await axios.put(`${API_URL}appointments/${id}`, userApps, config);
   return res;
 };
 
-//delete appointment
+//bring client appointments
+export const bringUsersAppointments = async (id, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const res = await axios.get(`${API_URL}users/${id}/appointments`, config);
+  console.log(res);
+  return res.data;
+};
+
+//delete appointment for users clients needs to be fixed
 export const deleteAppointments = async (id, token) => {
   const config = {
     headers: {

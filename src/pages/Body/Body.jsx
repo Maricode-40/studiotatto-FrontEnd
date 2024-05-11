@@ -7,6 +7,7 @@ import { Profiles } from "../Profiles/Profiles";
 import { AdministratorProfile } from "../../pages/AdministratorProfile/AdministratorProfile";
 import { AdminRoute } from "../../components/AdminRoute/AdminRoute";
 import { Appointments } from "../Appointments/Appointments";
+import { AppointmentUserCreate } from "../../pages/Users/AppointmentUserProfile";
 
 export const Body = () => {
   return (
@@ -17,8 +18,9 @@ export const Body = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profiles" element={<Profiles />} />
-        <Route path="/appointments" element={<Appointments />} />
+        <Route path="/superappointments" element={<Appointments />} />
         <Route path="/about" element={<About />} />
+        <Route path="/clientappointments" element={<AppointmentUserCreate />} />
 
         <Route
           path="/admin"
