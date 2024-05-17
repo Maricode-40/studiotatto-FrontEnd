@@ -60,7 +60,7 @@ export const deleteUserById = (id, token) => {
   return axios.delete(`${API_URL}users/${id}`, config);
 };
 
-//BRING ALL APPOINTMENTS AS ADMIN- all good and  tested
+//BRING ALL APPOINTMENTS AS ADMIN- needs to bring all users
 export const bringAppointments = async (id, token) => {
   const config = {
     headers: {
@@ -72,7 +72,7 @@ export const bringAppointments = async (id, token) => {
   return res.data;
 };
 
-//CREATE APPOINTMENTS AS ADMIN
+//CREATE APPOINTMENTS AS ADMIN- done ok
 export const appointmentCreate = async (appsDate, token) => {
   const config = {
     headers: {
@@ -114,19 +114,20 @@ export const editAppointmentCall = async (userApps, token, id) => {
   return res;
 };
 
-//bring client appointments
+//bring client appointments 
 export const bringUsersAppointments = async (id, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   };
+  console.log(token, id);
   const res = await axios.get(`${API_URL}users/${id}/appointments`, config);
   console.log(res);
   return res.data;
 };
 
-//delete appointment for users clients needs to be fixed
+//delete appointment for users clients
 export const deleteAppointments = async (id, token) => {
   const config = {
     headers: {

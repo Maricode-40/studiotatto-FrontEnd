@@ -6,7 +6,11 @@ import { getUserData } from "../userSlice";
 import dayjs from "dayjs";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
-import { appointmentCreate, bringAppointments, editAppointmentCall} from "../../services/apiCalls";
+import {
+  appointmentCreate,
+  bringAppointments,
+  editAppointmentCall,
+} from "../../services/apiCalls";
 import { CustomInput } from "../../components/CustomInput/CustomInput";
 
 export const Appointments = () => {

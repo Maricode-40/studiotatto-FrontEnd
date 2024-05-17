@@ -1,6 +1,9 @@
-.userNewApps{
-  background-color: rgba(207, 208, 129, 0.773);
-  display: flex;
-  flex-direction: column;
-  font-size: 5px;
+.userNewApps {
+  margin: 19px 5px;
+
+  text-align: center;
+  background-color: #54a0a0;
+  color: rgb(177, 58, 58);
+  padding: 60px 10px;
+  font-weight: bold;
 }
