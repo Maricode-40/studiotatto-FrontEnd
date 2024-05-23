@@ -6,11 +6,7 @@ import { getUserData } from "../userSlice";
 import dayjs from "dayjs";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
-import {
-  appointmentCreate,
-  bringAppointments,
-  editAppointmentCall,
-} from "../../services/apiCalls";
+import { appointmentCreate, bringAppointments } from "../../services/apiCalls";
 import { CustomInput } from "../../components/CustomInput/CustomInput";
 
 export const Appointments = () => {
@@ -30,9 +26,14 @@ export const Appointments = () => {
   const userReduxData = useSelector(getUserData);
   const token = userReduxData.token;
   const userId = userReduxData.decodificado.userId;
+  const userRole = userReduxData.decodificado.Role;
+
+  const [totalPages, setTotalPages] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
+  //const userType = userReduxData.decodificado.Role;
 
   const inputHandlerAppointment = (e) => {
-    //console.log(typeof e.target.value, e.target.name);
+    console.log(typeof e.target.value, e.target.name);
     setAppsDate((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -53,10 +54,10 @@ export const Appointments = () => {
     if (citas.length === 0) {
       const fetchAppointments = async () => {
         try {
-          //console.log(token);
+          console.log(token);
           const fetched = await bringAppointments(userId, token);
-          //console.log(fetched.appointments);
-          setCitas(fetched.appointments);
+          //console.log(fetched.dates);
+          setCitas(fetched.dates);
         } catch (error) {
           console.log(error);
         }
@@ -88,12 +89,14 @@ export const Appointments = () => {
         nameProp="appointmentDate"
         placeholderProp="AppointmentDate"
         handlerProp={(e) => inputHandlerAppointment(e)}
+        onBlur={(e) => onBlurHandler(e)}
       />
       <CustomInput
         typeProp="number"
         nameProp="userId"
         placeholderProp="userId"
         handlerProp={(e) => inputHandlerAppointment(e)}
+        onBlur={(e) => onBlurHandler(e)}
       />
 
       <CustomInput
@@ -101,6 +104,7 @@ export const Appointments = () => {
         nameProp="serviceId"
         placeholderProp="serviceId"
         handlerProp={(e) => inputHandlerAppointment(e)}
+        onBlur={(e) => onBlurHandler(e)}
       />
       <h4>Create Appointments</h4>
       <button onClick={() => dateCreation(appsDate)}>Create</button>

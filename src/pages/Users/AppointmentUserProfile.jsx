@@ -21,12 +21,12 @@ export const AppointmentUserProfile = () => {
     serviceId: "",
   });
 
-  const [appoints, setAppointments] = useState(Date());
+  const [appoints, setAppoints] = useState(Date());
   const [selected, setSelected] = useState();
   const [appointmentId, setAppointmentId] = useState([""]);
   //we store them and then we retrieve/recall the appointments.
-   const [areYouDeletingMe, setAreYouDeletingMe] = useState(null);
-     const [errorMessage, setErrorMessage] = useState("");
+  const [areYouDeletingMe, setAreYouDeletingMe] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
   const [citas, setCitas] = useState([]);
 
   // we get the data from Redux
@@ -35,7 +35,7 @@ export const AppointmentUserProfile = () => {
   const userId = userReduxData.decodificado.userId;
 
   const inputHandlerDates = (e) => {
-    console.log(typeof e.target.value, e.target.name);
+    //console.log(typeof e.target.value, e.target.name);
     setUserApps((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -121,12 +121,14 @@ export const AppointmentUserProfile = () => {
         nameProp="appointmentDate"
         placeholderProp="AppointmentDate"
         handlerProp={(e) => inputHandlerDates(e)}
+        onBlur={(e) => onBlurHandler(e)}
       />
       <CustomInput
         typeProp="number"
         nameProp="userId"
         placeholderProp="userId"
         handlerProp={(e) => inputHandlerDates(e)}
+        onBlur={(e) => onBlurHandler(e)}
       />
 
       <CustomInput
@@ -134,6 +136,7 @@ export const AppointmentUserProfile = () => {
         nameProp="serviceId"
         placeholderProp="serviceId"
         handlerProp={(e) => inputHandlerDates(e)}
+        onBlur={(e) => onBlurHandler(e)}
       />
       <h4>Create Appointments</h4>
       <button onClick={() => dateCreation(userApps)}>Create</button>
@@ -142,36 +145,31 @@ export const AppointmentUserProfile = () => {
           <ul>
             {citas.map((appoints) => {
               return (
-                <MDBTable>
-                  <MDBTableBody>
-                    <tr>
-                      <td>
-                        <p className="text-muted mb-0"> {appoints.id} </p>
-                      </td>
-                      <td>
-                        <p className="text-muted mb-0">
-                          {appoints.appointmentDate}
-                        </p>
-                      </td>
-                      <p className="text-muted mb-0"> {appoints.userId}user</p>
-                      <td>
-                        <div
-                          className="delete-button"
-                          onClick={() => deleteAppointmentStepOne(appoints.id)}
-                        ></div>
-                        <div
-                          className={
-                           
-                            areYouDeletingMe === appoints.id
-                              ? "delete-button confirm-delete "
-                              : "delete-button confirm-delete display-none"
-                          }
-                          onClick={() => deleteApps(appoints.id)}
-                        ></div>
-                      </td>
-                    </tr>
-                  </MDBTableBody>
-                </MDBTable>
+                <td>
+                  <td>
+                    <p className="text-muted mb-0"> {appoints.id} </p>
+                  </td>
+                  <td>
+                    <p className="text-muted mb-0">
+                      {appoints.appointmentDate}
+                    </p>
+                  </td>
+                  <p className="text-muted mb-0"> {appoints.userId}user</p>
+                  <tr>
+                    <div
+                      className="delete-button"
+                      onClick={() => deleteAppointmentStepOne(appoints.id)}
+                    ></div>
+                    <div
+                      className={
+                        areYouDeletingMe === appoints.id
+                          ? "delete-button confirm-delete "
+                          : "delete-button confirm-delete display-none"
+                      }
+                      onClick={() => deleteApps(appoints.id)}
+                    ></div>
+                  </tr>
+                </td>
               );
             })}
           </ul>

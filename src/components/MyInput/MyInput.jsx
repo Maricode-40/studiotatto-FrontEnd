@@ -7,7 +7,7 @@ export const MyInput = ({
   isDisabled,
   // isValidContent
 }) => {
-  // props, properties, propiedades, se reciben como un objeto
+  // props, properties we get as an object
   return (
     <input
       className={"InputDesign"}

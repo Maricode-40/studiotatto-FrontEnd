@@ -60,19 +60,19 @@ export const deleteUserById = (id, token) => {
   return axios.delete(`${API_URL}users/${id}`, config);
 };
 
-//BRING ALL APPOINTMENTS AS ADMIN- needs to bring all users
+//BRING ALL USER logged  APPOINTMENTS AS ADMIN
 export const bringAppointments = async (id, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   };
-  const res = await axios.get(`${API_URL}users/${id}/appointments`, config);
+  const res = await axios.get(`${API_URL}appointments`, config);
   console.log(res);
   return res.data;
 };
 
-//CREATE APPOINTMENTS AS ADMIN- done ok
+//CREATE APPOINTMENTS AS ADMIN- done 
 export const appointmentCreate = async (appsDate, token) => {
   const config = {
     headers: {
@@ -85,7 +85,7 @@ export const appointmentCreate = async (appsDate, token) => {
   return res;
 };
 
-//for user clients creation
+//for user clients creation OK NOW
 export const createUserAppointments = async (userApps, token) => {
   const config = {
     headers: {
@@ -93,16 +93,12 @@ export const createUserAppointments = async (userApps, token) => {
     },
   };
   console.log(userApps, "any date created?");
-  const res = await axios.post(
-    `${API_URL}users/appointments`,
-    userApps,
-    config
-  );
-  console.log(config, "AY WEYYY");
+  const res = await axios.post(`${API_URL}/appointments`, userApps, config);
+  //console.log(config, "AY WEYYY");
 
   return res;
 };
-//update appointments for users  needs to be fixed
+//update appointments
 export const editAppointmentCall = async (userApps, token, id) => {
   const config = {
     headers: {
@@ -114,14 +110,14 @@ export const editAppointmentCall = async (userApps, token, id) => {
   return res;
 };
 
-//bring client appointments 
+//bring client appointments
 export const bringUsersAppointments = async (id, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   };
-  console.log(token, id);
+  //console.log(id, token);
   const res = await axios.get(`${API_URL}users/${id}/appointments`, config);
   console.log(res);
   return res.data;
