@@ -89,7 +89,7 @@ export const AppointmentUserProfile = () => {
       !IsInputError(userApps.firstName, "name") ||
       !IsInputError(userApps.email, "email")
     ) {
-      console.log("nombre o email no válidos");
+      //console.log("nombre o email no válidos");
       setErrorMessage("No se pueden actualizar los datos");
       return;
     }
@@ -145,31 +145,31 @@ export const AppointmentUserProfile = () => {
           <ul>
             {citas.map((appoints) => {
               return (
-                <td>
+                <div key={appoints.id}>
                   <td>
                     <p className="text-muted mb-0"> {appoints.id} </p>
+                    <td>
+                      <p className="text-muted mb-0">
+                        {appoints.appointmentDate}
+                      </p>
+                    </td>
+                    <p className="text-muted mb-0"> {appoints.userId}user</p>
+                    <tr>
+                      <div
+                        className="delete-button"
+                        onClick={() => deleteAppointmentStepOne(appoints.id)}
+                      ></div>
+                      <div
+                        className={
+                          areYouDeletingMe === appoints.id
+                            ? "delete-button confirm-delete "
+                            : "delete-button confirm-delete display-none"
+                        }
+                        onClick={() => deleteApps(appoints.id)}
+                      ></div>
+                    </tr>
                   </td>
-                  <td>
-                    <p className="text-muted mb-0">
-                      {appoints.appointmentDate}
-                    </p>
-                  </td>
-                  <p className="text-muted mb-0"> {appoints.userId}user</p>
-                  <tr>
-                    <div
-                      className="delete-button"
-                      onClick={() => deleteAppointmentStepOne(appoints.id)}
-                    ></div>
-                    <div
-                      className={
-                        areYouDeletingMe === appoints.id
-                          ? "delete-button confirm-delete "
-                          : "delete-button confirm-delete display-none"
-                      }
-                      onClick={() => deleteApps(appoints.id)}
-                    ></div>
-                  </tr>
-                </td>
+                </div>
               );
             })}
           </ul>
